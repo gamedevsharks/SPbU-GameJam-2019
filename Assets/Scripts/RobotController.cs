@@ -35,12 +35,14 @@ public class RobotController : MonoBehaviour
             return;
         }
         
+        
         Vector2 target = new Vector2(targetBattery.transform.position.x, targetBattery.transform.position.y);
         
         float diff = transform.position.x - target.x;
         if (Math.Abs(diff) < 0.1)
         {
             m_Character.Move(0f, false, false);
+            moveUp();
             return;
         }
         
@@ -54,13 +56,23 @@ public class RobotController : MonoBehaviour
         }
         
     }
+
+    private void moveUp()
+    {
+        m_Character.Fly(true);
+    }
     
     void OnEnable()
     { 
         targetBattery = FindNearestBattery();
     }
 
-    
+    private void OnDisable()
+    {
+        m_Character.Fly(false);
+    }
+
+
     private static float Length(Vector3 v)
     {
         return Math.Abs(v.x) + Math.Abs(v.y) + Math.Abs(v.z);
