@@ -78,11 +78,6 @@ public class RobotController : MonoBehaviour
             }
         }
 
-        if (nearestBattery != null)
-        {
-            Object.Destroy(nearestBattery.gameObject);   
-        }
-
         return nearestBattery;
 
     }
