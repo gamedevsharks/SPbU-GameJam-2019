@@ -13,10 +13,15 @@ namespace DefaultNamespace
 
         void Update()
         {
-            if (Input.GetKeyDown("f"))
+            if (Input.GetKeyDown("z"))
             {
-                currentState = currentState == state.HUMAN ? state.ROBOT : state.HUMAN;
+                ChangeState();
             }
+        }
+
+        private state ChangeState()
+        {
+            return currentState == state.HUMAN ? state.ROBOT : state.HUMAN;
         }
     }
 }

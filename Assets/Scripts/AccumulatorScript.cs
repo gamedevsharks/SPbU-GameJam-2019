@@ -9,7 +9,7 @@ public class AccumulatorScript : MonoBehaviour
 
     public float decreaseSpeedPerSecond = 10f;
 
-    private float charge = 50f;
+    public float charge = 50f;
     
     private Vector2 pos = new Vector2(20,40);
     private Vector2 size = new Vector2(60,20);
@@ -37,7 +37,7 @@ public class AccumulatorScript : MonoBehaviour
         }
     }
 
-    private void AddBattery()
+    public void AddBattery()
     {
         charge = Math.Min(maxCharge, charge + 10);
     }
