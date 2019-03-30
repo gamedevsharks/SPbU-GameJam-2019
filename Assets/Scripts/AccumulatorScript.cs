@@ -35,11 +35,6 @@ public class AccumulatorScript : MonoBehaviour
         {
             charge = Math.Max(0f, charge - decreaseSpeedPerSecond * Time.deltaTime);
         }
-        
-        if (Input.GetKeyDown("space"))
-        {
-            AddBattery();
-        }
     }
 
     private void AddBattery()
