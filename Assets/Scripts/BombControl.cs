@@ -17,14 +17,8 @@ public class BombControl : MonoBehaviour
         
     }
 
-    void OnGUI()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        GUI.Label(new Rect(Screen.width / 2 - 40, 50, 80, 30), "GAME OVER");
-
-        if (GUI.Button(new Rect(Screen.width / 2 - 40, 300, 60, 30), "Retry?"))
-        {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene(1);
     }
 }
