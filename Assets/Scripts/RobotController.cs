@@ -11,7 +11,7 @@ public class RobotController : MonoBehaviour
 {
     private PlatformerCharacter2D m_Character;
 
-    private Vector2 target = new Vector2(-5f, 0f);
+    private BatteryControl targetBattery = null;
     
     private void Awake()
     {
@@ -21,11 +21,22 @@ public class RobotController : MonoBehaviour
 
     private void Update()
     {
+        if (targetBattery == null)
+        {
+            targetBattery = FindNearestBattery();
+        }
     }
 
 
     private void FixedUpdate()
     {
+        if (targetBattery == null)
+        {
+            return;
+        }
+        
+        Vector2 target = new Vector2(targetBattery.transform.position.x, targetBattery.transform.position.y);
+        
         float diff = transform.position.x - target.x;
         if (Math.Abs(diff) < 0.1)
         {
@@ -46,8 +57,7 @@ public class RobotController : MonoBehaviour
     
     void OnEnable()
     { 
-        BatteryControl nearestButtery = FindNearestBattery();
-        target = new Vector2(nearestButtery.transform.position.x, nearestButtery.transform.position.y);
+        targetBattery = FindNearestBattery();
     }
 
     
