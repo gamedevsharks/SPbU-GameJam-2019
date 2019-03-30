@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitControl : MonoBehaviour
+public class WinScene : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,13 @@ public class ExitControl : MonoBehaviour
         
     }
     
-    void OnTriggerEnter2D(Collider2D other)
+    void OnGUI()
     {
-        SceneManager.LoadScene(2);
+        GUI.Label(new Rect(Screen.width / 2 - 40, 50, 80, 30), "You win!");
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 40, 300, 60, 30), "Retry?"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
