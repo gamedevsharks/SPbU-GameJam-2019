@@ -34,12 +34,14 @@ public class TransformationScript : MonoBehaviour
             currentState = State.Robot;
             GetComponent<AccumulatorScript>().IsActive = true;
             GetComponent<Platformer2DUserControl>().enabled = false;
+            GetComponent<RobotController>().enabled = true;
         }
         else
         {
             currentState = State.Human;
             GetComponent<AccumulatorScript>().IsActive = false;
             GetComponent<Platformer2DUserControl>().enabled = true;
+            GetComponent<RobotController>().enabled = false;
         }
     }
 }
