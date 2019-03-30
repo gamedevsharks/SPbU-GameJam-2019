@@ -42,7 +42,7 @@ public class AccumulatorScript : MonoBehaviour
         }
     }
 
-    public void AddBattery()
+    private void AddBattery()
     {
         charge = Math.Min(maxCharge, charge + 10);
     }
