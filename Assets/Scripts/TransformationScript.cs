@@ -1,37 +1,33 @@
 using System;
 using UnityEngine;
-
-namespace DefaultNamespace
+public class TransformationScript : MonoBehaviour
 {
-    public class TransformationScript : MonoBehaviour
+    public enum State
     {
-        public enum State
+        Human, Robot
+    }
+
+    public State currentState = State.Human;
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Z))
         {
-            Human, Robot
+            ChangeState();
         }
+    }
 
-        public State currentState = State.Human;
-
-        void Update()
+    private void ChangeState()
+    {
+        if (currentState == State.Human)
         {
-            if (Input.GetKey(KeyCode.Z))
-            {
-                ChangeState();
-            }
+            currentState = State.Robot;
+            GetComponent<AccumulatorScript>().IsActive = true;
         }
-
-        private void ChangeState()
+        else
         {
-            if (currentState == State.Human)
-            {
-                currentState = State.Robot;
-                GetComponent<AccumulatorScript>().IsActive = true;
-            }
-            else
-            {
-                currentState = State.Human;
-                GetComponent<AccumulatorScript>().IsActive = false;
-            }
+            currentState = State.Human;
+            GetComponent<AccumulatorScript>().IsActive = false;
         }
     }
 }
