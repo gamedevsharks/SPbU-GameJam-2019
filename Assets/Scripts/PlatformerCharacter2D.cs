@@ -50,7 +50,7 @@ namespace UnityStandardAssets._2D
 
 
         public void Move(float move, bool crouch, bool jump)
-        {
+        {   
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
             {
@@ -99,6 +99,19 @@ namespace UnityStandardAssets._2D
             }
         }
 
+        public void Fly(bool fly_mode)
+        {
+            if (fly_mode)
+            {
+                m_Rigidbody2D.mass = 0f;
+                m_Rigidbody2D.velocity = new Vector2(0f, 5f);
+                
+            }
+            else
+            {
+                m_Rigidbody2D.mass = 1f;
+            }
+        }
 
         private void Flip()
         {
