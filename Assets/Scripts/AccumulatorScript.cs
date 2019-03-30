@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class AccumulatorScript : MonoBehaviour
 {
-    public static readonly float maxCharge = 100f;
-    
-    [Range(0f, 100f)]
-    public float charge = 50f;
+    public float maxCharge = 100f;
 
     public float decreaseSpeedPerSecond = 10f;
 
+    private float charge = 50f;
+    
     private Vector2 pos = new Vector2(20,40);
     private Vector2 size = new Vector2(60,20);
     private Texture2D emptyTex;
@@ -39,7 +38,12 @@ public class AccumulatorScript : MonoBehaviour
         
         if (Input.GetKeyDown("space"))
         {
-            charge = Math.Min(maxCharge, charge + 10);
+            AddBattery();
         }
+    }
+
+    public void AddBattery()
+    {
+        charge = Math.Min(maxCharge, charge + 10);
     }
 }

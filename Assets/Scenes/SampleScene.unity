@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760b1ce994b64fa48a6340482681f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 50
+  maxCharge: 100
+  decreaseSpeedPerSecond: 10
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
