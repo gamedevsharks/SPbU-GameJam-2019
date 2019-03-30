@@ -1,5 +1,4 @@
 using System;
-using DefaultNamespace;
 using UnityEngine;
 using UnityStandardAssets._2D;
 
@@ -36,7 +35,6 @@ public class TransformationScript : MonoBehaviour
             GetComponent<AccumulatorScript>().IsActive = true;
             GetComponent<Platformer2DUserControl>().enabled = false;
             GetComponent<RobotController>().enabled = true;
-            GetComponent<NearestBatteryScript>().FindBattery();
         }
         else
         {
