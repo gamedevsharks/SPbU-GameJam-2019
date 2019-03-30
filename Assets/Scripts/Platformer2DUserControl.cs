@@ -10,13 +10,10 @@ namespace UnityStandardAssets._2D
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
 
-        private TransformationScript transformationScript;
-
 
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
-            transformationScript = GetComponent<TransformationScript>();
         }
 
 
@@ -32,11 +29,6 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
-            if (transformationScript.currentState == TransformationScript.State.Robot)
-            {
-                return;
-            }
-            
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             // Pass all parameters to the character control script.
             m_Character.Move(h, false, m_Jump);
