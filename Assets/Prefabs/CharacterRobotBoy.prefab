@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 335811628742868219}
   - component: {fileID: 335811628737567643}
   - component: {fileID: 2843686205222222461}
+  - component: {fileID: 299225194494388999}
   m_Layer: 0
   m_Name: CharacterRobotBoy
   m_TagString: Player
@@ -215,6 +216,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCharge: 100
   decreaseSpeedPerSecond: 10
+--- !u!114 &299225194494388999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335811628732090649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b4dcf3686f4dbabfa2fcc028265c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
 --- !u!1 &335811628732090651
 GameObject:
   m_ObjectHideFlags: 0
