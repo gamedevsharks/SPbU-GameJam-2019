@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets._2D;
@@ -42,7 +43,8 @@ public class RobotController : BaseController
         if (Math.Abs(diff) < 0.1)
         {
             m_Character.Move(0f, false, false);
-            GetComponent<ControllersManager>().SetController<FlyController>();
+            
+            GetComponent<TransformationScript>().ChangeState(TransformationScript.State.RobotFly);
             GetComponent<FlyController>().targetY = target.y;
             return;
         }

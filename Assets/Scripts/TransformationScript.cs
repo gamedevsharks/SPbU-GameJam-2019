@@ -6,7 +6,7 @@ public class TransformationScript : MonoBehaviour
 {
     public enum State
     {
-        Human, Robot
+        Human, RobotRun, RobotFly
     }
 
     public State currentState = State.Human;
@@ -22,26 +22,40 @@ public class TransformationScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            ChangeState();
+            if (currentState == State.Human)
+            {
+                ChangeState(State.RobotRun);
+            }
+            else if (currentState != State.Human)
+            {
+                ChangeState(State.Human);
+            }
+            
         }
     }
 
-    public void ChangeState()
+    public void ChangeState(State newState)
     {
         m_Character.Move(0f, false, false);
-        if (currentState == State.Human)
-        {
-            currentState = State.Robot;
-            GetComponent<AccumulatorScript>().IsActive = true;
 
-            GetComponent<ControllersManager>().SetController<RobotController>();
-        }
-        else
+        currentState = newState;
+        switch (newState)
         {
-            currentState = State.Human;
-            GetComponent<AccumulatorScript>().IsActive = false;
+            case State.Human:
+                GetComponent<AccumulatorScript>().IsActive = false;
             
-            GetComponent<ControllersManager>().SetController<Platformer2DUserControl>();
+                GetComponent<ControllersManager>().SetController<Platformer2DUserControl>();
+                break;
+            
+            case State.RobotRun:
+                GetComponent<AccumulatorScript>().IsActive = true;
+
+                GetComponent<ControllersManager>().SetController<RobotController>();
+                break;
+            
+            case State.RobotFly:
+                GetComponent<ControllersManager>().SetController<FlyController>();
+                break;
         }
     }
 }

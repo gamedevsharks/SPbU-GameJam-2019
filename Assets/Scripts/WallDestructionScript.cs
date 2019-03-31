@@ -1,6 +1,8 @@
 using UnityEngine;
 public class WallDestructionScript : MonoBehaviour
 {
+
+    public TransformationScript.State reactOn;
     
     void Start()
     {
@@ -16,7 +18,7 @@ public class WallDestructionScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {   
         var robot = Object.FindObjectOfType<RobotController>();
-        if (robot.GetComponent<TransformationScript>().currentState == TransformationScript.State.Robot)
+        if (robot.GetComponent<TransformationScript>().currentState == reactOn)
         {
             Destroy(this.gameObject);
         }

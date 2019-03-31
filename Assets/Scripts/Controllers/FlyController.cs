@@ -29,8 +29,7 @@ public class FlyController : BaseController
     {
         if (Math.Abs(transform.position.y - targetY) < 0.1)
         {
-            
-            GetComponent<TransformationScript>().ChangeState();
+            GetComponent<TransformationScript>().ChangeState(TransformationScript.State.RobotRun);
         }
     }
 }
