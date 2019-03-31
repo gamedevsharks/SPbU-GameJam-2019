@@ -18,6 +18,11 @@ public class WallDestructionScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {   
         var robot = Object.FindObjectOfType<RobotController>();
+        if (robot == null)
+        {
+            return;
+        }
+        
         if (robot.GetComponent<TransformationScript>().currentState == reactOn)
         {
             Destroy(this.gameObject);

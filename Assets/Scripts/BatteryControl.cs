@@ -16,7 +16,13 @@ public class BatteryControl : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject.Find("CharacterRobotBoy").GetComponent<AccumulatorScript>().AddBattery();
+        GameObject obj = GameObject.Find("CharacterRobotBoy");
+        if (obj == null)
+        {
+            return;
+        }
+        
+        obj.GetComponent<AccumulatorScript>().AddBattery();
         Destroy (this.gameObject);
     }
 }
