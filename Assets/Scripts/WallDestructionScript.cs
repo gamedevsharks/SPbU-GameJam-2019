@@ -17,16 +17,16 @@ public class WallDestructionScript : MonoBehaviour
     
     void OnTriggerStay2D(Collider2D other)
     {   
-        var robot = Object.FindObjectOfType<RobotController>();
-        if (robot == null)
+        var transformationScript = Object.FindObjectOfType<TransformationScript>();
+        if (transformationScript == null)
         {
             return;
         }
         
-        if (robot.GetComponent<TransformationScript>().currentState == reactOn)
+        if (transformationScript.currentState == reactOn)
         {
             Destroy(this.gameObject);
-            robot.GetComponent<AccumulatorScript>().BreakWallDecrease();
+            transformationScript.GetComponent<AccumulatorScript>().BreakWallDecrease();
         }
     }
 }

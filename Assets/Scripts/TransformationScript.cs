@@ -38,6 +38,17 @@ public class TransformationScript : MonoBehaviour
     {
         m_Character.Move(0f, false, false);
 
+        if (newState != State.Human && currentState == State.Human)
+        {
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("CharacterRobotBoy").GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else if (newState == State.Human)
+        {
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("CharacterRobotBoy").GetComponent<SpriteRenderer>().enabled = false;
+        }
+        
         currentState = newState;
         switch (newState)
         {
