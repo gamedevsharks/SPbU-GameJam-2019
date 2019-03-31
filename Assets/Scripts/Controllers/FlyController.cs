@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets._2D;
@@ -6,6 +7,8 @@ using UnityStandardAssets._2D;
 public class FlyController : BaseController
 {
     private PlatformerCharacter2D m_Character;
+    
+    public float targetY = 0f;
     
     private void Awake()
     {
@@ -20,5 +23,14 @@ public class FlyController : BaseController
     private void OnDisable()
     {
         m_Character.Fly(false);
+    }
+
+    private void Update()
+    {
+        if (Math.Abs(transform.position.y - targetY) < 0.1)
+        {
+            
+            GetComponent<TransformationScript>().ChangeState();
+        }
     }
 }

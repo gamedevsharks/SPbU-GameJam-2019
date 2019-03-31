@@ -26,7 +26,7 @@ public class TransformationScript : MonoBehaviour
         }
     }
 
-    private void ChangeState()
+    public void ChangeState()
     {
         m_Character.Move(0f, false, false);
         if (currentState == State.Human)
