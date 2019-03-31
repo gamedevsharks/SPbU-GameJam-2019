@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class AccumulatorScript : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class AccumulatorScript : MonoBehaviour
         {
             if (charge == 0f)
             {
+                var transformation = Object.FindObjectOfType<TransformationScript>();
+                transformation.ChangeState(TransformationScript.State.Human);
                 isActive = false;
             } else {
                 charge = Math.Max(0f, charge - decreaseSpeedPerSecond * Time.deltaTime);
@@ -41,5 +44,10 @@ public class AccumulatorScript : MonoBehaviour
     public void AddBattery()
     {
         charge = Math.Min(maxCharge, charge + 10);
+    }
+
+    public void BreakWallDecrease()
+    {
+        charge -= 50f;
     }
 }
