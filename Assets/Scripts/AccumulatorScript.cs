@@ -42,4 +42,9 @@ public class AccumulatorScript : MonoBehaviour
     {
         charge = Math.Min(maxCharge, charge + 10);
     }
+
+    public void BreakWallDecrease()
+    {
+        charge -= 50f;
+    }
 }

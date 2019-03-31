@@ -21,6 +21,7 @@ public class WallDestructionScript : MonoBehaviour
         if (robot.GetComponent<TransformationScript>().currentState == reactOn)
         {
             Destroy(this.gameObject);
+            robot.GetComponent<AccumulatorScript>().BreakWallDecrease();
         }
     }
 }
