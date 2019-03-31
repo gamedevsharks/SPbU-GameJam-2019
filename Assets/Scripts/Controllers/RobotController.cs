@@ -43,6 +43,7 @@ public class RobotController : BaseController
         {
             m_Character.Move(0f, false, false);
             GetComponent<ControllersManager>().SetController<FlyController>();
+            GetComponent<FlyController>().targetY = target.y;
             return;
         }
         
