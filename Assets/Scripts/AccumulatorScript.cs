@@ -6,11 +6,11 @@ using Object = UnityEngine.Object;
 
 public class AccumulatorScript : MonoBehaviour
 {
-    public float maxCharge = 100f;
+    public float maxCharge = 200f;
 
-    public float decreaseSpeedPerSecond = 10f;
+    public float decreaseSpeedPerSecond = 80f;
 
-    private float charge = 50f;
+    private float charge = 0f;
 
     public float Charge
     {
@@ -43,11 +43,12 @@ public class AccumulatorScript : MonoBehaviour
 
     public void AddBattery()
     {
-        charge = Math.Min(maxCharge, charge + 10);
+        Debug.Log("foo");
+        charge = Math.Min(maxCharge, charge + 18);
     }
 
     public void BreakWallDecrease()
     {
-        charge -= 50f;
+        charge -= 15f;
     }
 }
