@@ -7,7 +7,7 @@ using UnityStandardAssets._2D;
 
 using Object = UnityEngine.Object;
 
-public class RobotController : MonoBehaviour
+public class RobotController : BaseController
 {
     private PlatformerCharacter2D m_Character;
 

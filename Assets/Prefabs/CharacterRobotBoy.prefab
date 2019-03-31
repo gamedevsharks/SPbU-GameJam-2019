@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 299225194494388999}
   - component: {fileID: 7347798273264299435}
   - component: {fileID: 985652952391006755}
+  - component: {fileID: 5660278294044114630}
   m_Layer: 0
   m_Name: CharacterRobotBoy
   m_TagString: Player
@@ -253,6 +254,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dd315262f37a914b8223023f8c462f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5660278294044114630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335811628732090649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c22233291e7d5242889ea3e7de877e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &335811628732090651
