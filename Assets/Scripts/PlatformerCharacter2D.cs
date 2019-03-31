@@ -20,6 +20,8 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        private bool isFlying = false;
+        
         private void Awake()
         {
             // Setting up references.
@@ -46,6 +48,11 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+
+            if (isFlying)
+            {
+                m_Rigidbody2D.velocity = new Vector2(0f, 5f);
+            }
         }
 
 
@@ -101,16 +108,7 @@ namespace UnityStandardAssets._2D
 
         public void Fly(bool fly_mode)
         {
-            if (fly_mode)
-            {
-                m_Rigidbody2D.mass = 0f;
-                m_Rigidbody2D.velocity = new Vector2(0f, 5f);
-                
-            }
-            else
-            {
-                m_Rigidbody2D.mass = 1f;
-            }
+            isFlying = fly_mode;
         }
 
         private void Flip()

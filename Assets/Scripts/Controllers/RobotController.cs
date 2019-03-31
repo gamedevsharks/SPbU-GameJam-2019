@@ -42,7 +42,7 @@ public class RobotController : BaseController
         if (Math.Abs(diff) < 0.1)
         {
             m_Character.Move(0f, false, false);
-            moveUp();
+            GetComponent<ControllersManager>().SetController<FlyController>();
             return;
         }
         
@@ -55,11 +55,6 @@ public class RobotController : BaseController
             m_Character.Move(-1f, false, false);
         }
         
-    }
-
-    private void moveUp()
-    {
-        m_Character.Fly(true);
     }
     
     void OnEnable()
