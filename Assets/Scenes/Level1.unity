@@ -151,21 +151,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8341196569815051730, guid: a6783d9dc620d4dc5bd671b8ce4db525,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341196569815051730, guid: a6783d9dc620d4dc5bd671b8ce4db525,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341196569815051730, guid: a6783d9dc620d4dc5bd671b8ce4db525,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 102367262970725492, guid: a6783d9dc620d4dc5bd671b8ce4db525,
         type: 3}
       propertyPath: m_Name
@@ -226,6 +211,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8341196569815051730, guid: a6783d9dc620d4dc5bd671b8ce4db525,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341196569815051730, guid: a6783d9dc620d4dc5bd671b8ce4db525,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341196569815051730, guid: a6783d9dc620d4dc5bd671b8ce4db525,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6783d9dc620d4dc5bd671b8ce4db525, type: 3}
 --- !u!1 &209374841 stripped
@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -362,6 +363,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a2f23c203e6864f9f4e0df39ce462f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 1951702852302052649, guid: dcd0ffc5e22347f4ebdbadf426fe634f, type: 3}
 --- !u!1 &527718154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8631827059498726537, guid: 509f1c6a67120481b9509ada068cfff3,
@@ -576,11 +590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7775229726098384595, guid: e5f0ca0dc6388498fba3f25ec454cad8,
-        type: 3}
-      propertyPath: m_Name
-      value: GroundTiles4 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4053964568563936915, guid: e5f0ca0dc6388498fba3f25ec454cad8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -635,6 +644,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775229726098384595, guid: e5f0ca0dc6388498fba3f25ec454cad8,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundTiles4 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5f0ca0dc6388498fba3f25ec454cad8, type: 3}
@@ -877,11 +891,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7775229726098384595, guid: e5f0ca0dc6388498fba3f25ec454cad8,
-        type: 3}
-      propertyPath: m_Name
-      value: GroundTiles4 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 4053964568563936915, guid: e5f0ca0dc6388498fba3f25ec454cad8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -936,6 +945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775229726098384595, guid: e5f0ca0dc6388498fba3f25ec454cad8,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundTiles4 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5f0ca0dc6388498fba3f25ec454cad8, type: 3}
