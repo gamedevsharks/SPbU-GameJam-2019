@@ -15,7 +15,7 @@ public class WallDestructionScript : MonoBehaviour
     
     
     
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {   
         var robot = Object.FindObjectOfType<RobotController>();
         if (robot.GetComponent<TransformationScript>().currentState == reactOn)
