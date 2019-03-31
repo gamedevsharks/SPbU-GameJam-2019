@@ -38,6 +38,7 @@ public class RobotController : BaseController
         
         
         Vector2 target = new Vector2(targetBattery.transform.position.x, targetBattery.transform.position.y);
+        Debug.Log(target);
         
         float diff = transform.position.x - target.x;
         if (Math.Abs(diff) < 0.1)
@@ -67,7 +68,7 @@ public class RobotController : BaseController
 
     private void OnDisable()
     {
-        m_Character.Fly(false);
+        m_Character.Fly(false, Vector2.zero);
     }
 
 
