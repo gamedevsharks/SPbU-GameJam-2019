@@ -17,12 +17,14 @@ public class FlyController : BaseController
     
     private void OnEnable()
     {
-        m_Character.Fly(true);
+        Vector2 position = new Vector2(0f, transform.position.y);
+        m_Character.Fly(true, new Vector2(0f, targetY) - position);
     }
 
     private void OnDisable()
     {
-        m_Character.Fly(false);
+        
+        m_Character.Fly(false, Vector2.zero);
     }
 
     private void Update()

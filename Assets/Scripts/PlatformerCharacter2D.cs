@@ -21,6 +21,7 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
         private bool isFlying = false;
+        private Vector2 flyingVector;
         
         private void Awake()
         {
@@ -51,7 +52,7 @@ namespace UnityStandardAssets._2D
 
             if (isFlying)
             {
-                m_Rigidbody2D.velocity = new Vector2(0f, 5f);
+                m_Rigidbody2D.velocity = flyingVector.normalized * 5f;;
             }
         }
 
@@ -106,9 +107,10 @@ namespace UnityStandardAssets._2D
             }
         }
 
-        public void Fly(bool fly_mode)
+        public void Fly(bool fly_mode, Vector2 flyingVector)
         {
             isFlying = fly_mode;
+            this.flyingVector = flyingVector;
         }
 
         private void Flip()
