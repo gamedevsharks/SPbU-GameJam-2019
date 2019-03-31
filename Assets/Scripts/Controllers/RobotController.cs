@@ -38,6 +38,10 @@ public class RobotController : BaseController
         
         
         Vector2 target = new Vector2(targetBattery.transform.position.x, targetBattery.transform.position.y);
+
+        target.x += targetBattery.transform.localScale.x / 2;
+        target.y -= targetBattery.transform.localScale.y / 2;
+        
         Debug.Log(target);
         
         float diff = transform.position.x - target.x;
