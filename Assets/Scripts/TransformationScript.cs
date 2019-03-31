@@ -25,12 +25,7 @@ public class TransformationScript : MonoBehaviour
             if (currentState == State.Human)
             {
                 ChangeState(State.RobotRun);
-            }
-            else if (currentState != State.Human)
-            {
-                ChangeState(State.Human);
-            }
-            
+            }            
         }
     }
 
