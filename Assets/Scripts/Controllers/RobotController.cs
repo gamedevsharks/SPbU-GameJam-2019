@@ -42,15 +42,13 @@ public class RobotController : BaseController
         target.x += targetBattery.transform.localScale.x / 2;
         target.y -= targetBattery.transform.localScale.y / 2;
         
-        Debug.Log(target);
-        
         float diff = transform.position.x - target.x;
         if (Math.Abs(diff) < 0.1)
         {
             m_Character.Move(0f, false, false);
             
-            GetComponent<TransformationScript>().ChangeState(TransformationScript.State.RobotFly);
             GetComponent<FlyController>().targetY = target.y;
+            GetComponent<TransformationScript>().ChangeState(TransformationScript.State.RobotFly);
             return;
         }
         
